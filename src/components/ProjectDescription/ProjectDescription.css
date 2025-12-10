@@ -1,0 +1,129 @@
+.project-container {
+  padding: 5rem 5vw;
+  background-color: #f9f9f9;
+  color: black;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.logo_Text {
+  width: 150px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 3rem;
+  border-radius: 30px;
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border: black 2px solid;
+}
+
+.problem-card {
+  background-image: url("/images/cardProblem2.png");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ebedf0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.solution-card {
+  background-image: url("/images/cardSolution2.png");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ebedf0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.problem-card .card-icon {
+  background-color: #ffeaea;
+  color: var(--color-accent);
+}
+
+.solution-card .card-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .project-container {
+    padding: 4rem 3vw;
+  }
+
+  .grid-container {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+}

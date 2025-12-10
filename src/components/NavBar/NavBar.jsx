@@ -25,17 +25,17 @@ const NavBar = () => {
       <ul className="nav-links">
         <li>
           <a href="#hero" className="nav-link">
-            Home
+            Accueil
           </a>
         </li>
         <li>
           <a href="#project" className="nav-link">
-            About
+            à propos
           </a>
         </li>
         <li>
           <a href="#solution" className="nav-link">
-            Project
+            Projet
           </a>
         </li>
         <li>
@@ -44,7 +44,7 @@ const NavBar = () => {
           </a>
         </li>
       </ul>
-      <button className="nav-cta">Get Started</button>
+      <button className="nav-cta">Se lancer</button>
     </nav>
   );
 };

@@ -91,8 +91,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-actions"
         >
-          <button className="primary-btn">Start Gifting</button>
-          <button className="secondary-btn">Learn More</button>
+          <button className="primary-btn">Commencer</button>
+          <button className="secondary-btn">En savoir plus</button>
         </motion.div>
       </div>
     </section>

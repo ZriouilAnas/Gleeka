@@ -1,6 +1,6 @@
 .gift-finder {
   width: 100vw;
-  margin: 0 auto;
+  margin: 12vh auto;
   padding: 2rem;
   min-height: 80vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -85,6 +85,7 @@
 
 /* Options Grid */
 .options-grid {
+  margin: 12vh auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;

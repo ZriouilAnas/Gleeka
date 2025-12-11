@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./GiftFinder.css";
 import giftsData from "../../data/gifts.json";
+import { div } from "framer-motion/client";
 
 const GiftFinder = () => {
   const [currentStep, setCurrentStep] = useState(0);

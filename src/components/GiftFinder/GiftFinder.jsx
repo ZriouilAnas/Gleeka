@@ -207,7 +207,7 @@ const GiftFinder = () => {
     return (
       <div className="gift-finder results-view">
         <div className="results-header">
-          <h2>🎁 Gift Suggestions Just For You</h2>
+          <h2>🎁 Gift Suggestions Just For You 🎁</h2>
           <p className="subtitle">
             En fonction de vos préférences, nous avons trouvé ces cadeaux :
           </p>
@@ -231,7 +231,17 @@ const GiftFinder = () => {
                 </div>
                 <div className="gift-footer">
                   <span className="gift-price">${gift.price.toFixed(2)}</span>
-                  <button className="select-btn">Sélectionner un cadeau</button>
+                  <button
+                    className="select-btn"
+                    onClick={() =>
+                      window.open(
+                        `https://www.google.com/search?q=${gift.name}`,
+                        "_blank"
+                      )
+                    }
+                  >
+                    Sélectionner un cadeau
+                  </button>
                 </div>
               </div>
             </div>

@@ -95,7 +95,9 @@ const HeroSection = () => {
         >
           <button
             className="primary-btn"
-            onClick={() => navigate("/gift-finder")}
+            onClick={() =>
+              (window.location.href = "https://gleeka-v1.vercel.app/")
+            }
           >
             Commencer
           </button>

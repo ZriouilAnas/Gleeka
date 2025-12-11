@@ -47,7 +47,10 @@ const NavBar = () => {
           </a>
         </li>
       </ul>
-      <button className="nav-cta" onClick={() => navigate("/gift-finder")}>
+      <button
+        className="nav-cta"
+        onClick={() => (window.location.href = "https://gleeka-v1.vercel.app/")}
+      >
         Se lancer
       </button>
     </nav>

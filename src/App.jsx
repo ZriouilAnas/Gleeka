@@ -3,8 +3,6 @@ import Lenis from "lenis";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import GiftFinder from "./components/GiftFinder/GiftFinder";
-import Gifter from "./pages/gifter";
 
 function App() {
   useEffect(() => {

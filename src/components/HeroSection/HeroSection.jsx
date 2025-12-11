@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./HeroSection.css";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero-container" id="hero">
       <div className="hero-background">
@@ -91,7 +93,12 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-actions"
         >
-          <button className="primary-btn">Commencer</button>
+          <button
+            className="primary-btn"
+            onClick={() => navigate("/gift-finder")}
+          >
+            Commencer
+          </button>
           <button className="secondary-btn">En savoir plus</button>
         </motion.div>
       </div>

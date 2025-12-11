@@ -1,35 +1,34 @@
-import { useEffect } from 'react'
-import Lenis from 'lenis'
-import './App.css'
-import NavBar from './components/NavBar/NavBar'
-import HeroSection from './components/HeroSection/HeroSection'
-import ProjectDescription from './components/ProjectDescription/ProjectDescription'
-import FooterSection from './components/FooterSection/FooterSection'
+import { useEffect } from "react";
+import Lenis from "lenis";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import GiftFinder from "./components/GiftFinder/GiftFinder";
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis();
 
     function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
+    requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy()
-    }
-  }, [])
+      lenis.destroy();
+    };
+  }, []);
 
   return (
-    <div className="app-container">
-      <NavBar />
-      <HeroSection />
-      <ProjectDescription />
-      <FooterSection />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gift-finder" element={<GiftFinder />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

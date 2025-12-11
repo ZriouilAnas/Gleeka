@@ -1,0 +1,595 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Noise-Cancelling Headphones",
+      "category": "electronics",
+      "price": 199.99,
+      "keywords": ["music", "tech", "travel", "relaxation", "audio", "focus"],
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+      "description": "Premium headphones with active noise cancellation"
+    },
+    {
+      "id": 2,
+      "name": "Personalized Leather Journal",
+      "category": "stationery",
+      "price": 49.99,
+      "keywords": [
+        "writing",
+        "creative",
+        "thoughtful",
+        "keepsake",
+        "personalized",
+        "memory"
+      ],
+      "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400",
+      "description": "Handcrafted leather journal with personal engraving"
+    },
+    {
+      "id": 3,
+      "name": "Artisan Coffee Set",
+      "category": "kitchen",
+      "price": 89.99,
+      "keywords": [
+        "coffee",
+        "morning",
+        "foodie",
+        "relaxation",
+        "kitchen",
+        "brew"
+      ],
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400",
+      "description": "Premium coffee beans and French press set"
+    },
+    {
+      "id": 4,
+      "name": "Yoga Mat & Accessories Kit",
+      "category": "fitness",
+      "price": 79.99,
+      "keywords": [
+        "fitness",
+        "health",
+        "wellness",
+        "relaxation",
+        "exercise",
+        "meditation"
+      ],
+      "image": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400",
+      "description": "Eco-friendly yoga mat with blocks and straps"
+    },
+    {
+      "id": 5,
+      "name": "Cookbook Collection",
+      "category": "books",
+      "price": 59.99,
+      "keywords": [
+        "cooking",
+        "foodie",
+        "learning",
+        "creative",
+        "recipes",
+        "culinary"
+      ],
+      "image": "https://images.unsplash.com/photo-1544716278-e513176f20b5?w=400",
+      "description": "Set of 3 best-selling cookbooks from world chefs"
+    },
+    {
+      "id": 6,
+      "name": "Smart Home Assistant",
+      "category": "electronics",
+      "price": 129.99,
+      "keywords": [
+        "tech",
+        "practical",
+        "home",
+        "convenience",
+        "voice",
+        "automation"
+      ],
+      "image": "https://images.unsplash.com/photo-1558089687-f282ffcbc0d4?w=400",
+      "description": "Voice-controlled smart home device with premium sound"
+    },
+    {
+      "id": 7,
+      "name": "Gardening Starter Kit",
+      "category": "outdoor",
+      "price": 69.99,
+      "keywords": [
+        "gardening",
+        "nature",
+        "relaxation",
+        "hobby",
+        "plants",
+        "green"
+      ],
+      "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400",
+      "description": "Complete kit for starting an indoor herb garden"
+    },
+    {
+      "id": 8,
+      "name": "Custom Photo Puzzle",
+      "category": "games",
+      "price": 39.99,
+      "keywords": [
+        "thoughtful",
+        "personal",
+        "family",
+        "creative",
+        "memory",
+        "fun"
+      ],
+      "image": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=400",
+      "description": "1000-piece puzzle with your custom photo"
+    },
+    {
+      "id": 9,
+      "name": "Wireless Earbuds Pro",
+      "category": "electronics",
+      "price": 159.99,
+      "keywords": ["music", "tech", "wireless", "fitness", "travel", "modern"],
+      "image": "https://images.unsplash.com/photo-1590658165737-15a047b8b5e7?w=400",
+      "description": "Premium wireless earbuds with charging case"
+    },
+    {
+      "id": 10,
+      "name": "Scented Candle Collection",
+      "category": "home",
+      "price": 45.99,
+      "keywords": [
+        "relaxation",
+        "aromatherapy",
+        "home",
+        "cozy",
+        "stress relief",
+        "evening"
+      ],
+      "image": "https://images.unsplash.com/photo-1590736969956-6d9c2a8d6975?w=400",
+      "description": "Set of 3 luxury scented candles with wooden wicks"
+    },
+    {
+      "id": 11,
+      "name": "Fitness Tracker Watch",
+      "category": "fitness",
+      "price": 129.99,
+      "keywords": ["fitness", "health", "tech", "sports", "tracking", "active"],
+      "image": "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=400",
+      "description": "Advanced fitness tracker with heart rate monitoring"
+    },
+    {
+      "id": 12,
+      "name": "Portable Bluetooth Speaker",
+      "category": "electronics",
+      "price": 89.99,
+      "keywords": [
+        "music",
+        "outdoor",
+        "portable",
+        "party",
+        "travel",
+        "entertainment"
+      ],
+      "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400",
+      "description": "Waterproof Bluetooth speaker with 12-hour battery"
+    },
+    {
+      "id": 13,
+      "name": "Calligraphy Set",
+      "category": "arts",
+      "price": 64.99,
+      "keywords": [
+        "creative",
+        "writing",
+        "artistic",
+        "calming",
+        "hobby",
+        "crafts"
+      ],
+      "image": "https://images.unsplash.com/photo-1586000253386-b8c4d2a7e4c6?w=400",
+      "description": "Professional calligraphy pen set with ink and paper"
+    },
+    {
+      "id": 14,
+      "name": "Board Game Collection",
+      "category": "games",
+      "price": 79.99,
+      "keywords": [
+        "family",
+        "fun",
+        "social",
+        "entertainment",
+        "strategy",
+        "party"
+      ],
+      "image": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=400",
+      "description": "Set of 4 popular strategy board games for all ages"
+    },
+    {
+      "id": 15,
+      "name": "Essential Oil Diffuser",
+      "category": "wellness",
+      "price": 54.99,
+      "keywords": [
+        "relaxation",
+        "aromatherapy",
+        "wellness",
+        "sleep",
+        "calming",
+        "home"
+      ],
+      "image": "https://images.unsplash.com/photo-1594736797933-d0ea3ff8f3dc?w=400",
+      "description": "Ultrasonic essential oil diffuser with color-changing lights"
+    },
+    {
+      "id": 16,
+      "name": "Professional Knife Set",
+      "category": "kitchen",
+      "price": 149.99,
+      "keywords": [
+        "cooking",
+        "kitchen",
+        "practical",
+        "foodie",
+        "culinary",
+        "chef"
+      ],
+      "image": "https://images.unsplash.com/photo-1588666309990-d68f08e3d4c6?w=400",
+      "description": "8-piece professional chef's knife set with block"
+    },
+    {
+      "id": 17,
+      "name": "Virtual Reality Headset",
+      "category": "electronics",
+      "price": 299.99,
+      "keywords": [
+        "tech",
+        "gaming",
+        "entertainment",
+        "modern",
+        "immersive",
+        "fun"
+      ],
+      "image": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=400",
+      "description": "VR headset with motion controllers for immersive gaming"
+    },
+    {
+      "id": 18,
+      "name": "Handmade Tea Sampler",
+      "category": "food",
+      "price": 39.99,
+      "keywords": [
+        "tea",
+        "relaxation",
+        "health",
+        "foodie",
+        "calming",
+        "morning"
+      ],
+      "image": "https://images.unsplash.com/photo-1561047029-3000c68339ca?w=400",
+      "description": "12 varieties of premium loose-leaf tea with infuser"
+    },
+    {
+      "id": 19,
+      "name": "Hiking Backpack",
+      "category": "outdoor",
+      "price": 119.99,
+      "keywords": [
+        "outdoor",
+        "adventure",
+        "travel",
+        "practical",
+        "hiking",
+        "active"
+      ],
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
+      "description": "70L waterproof hiking backpack with hydration system"
+    },
+    {
+      "id": 20,
+      "name": "Digital Drawing Tablet",
+      "category": "arts",
+      "price": 189.99,
+      "keywords": [
+        "creative",
+        "artistic",
+        "tech",
+        "digital",
+        "drawing",
+        "design"
+      ],
+      "image": "https://images.unsplash.com/photo-1594736797933-d0ea3ff8f3dc?w=400",
+      "description": "Graphics tablet with pressure-sensitive pen for digital art"
+    },
+    {
+      "id": 21,
+      "name": "Wine Tasting Kit",
+      "category": "food",
+      "price": 99.99,
+      "keywords": [
+        "wine",
+        "sophisticated",
+        "entertainment",
+        "foodie",
+        "social",
+        "luxury"
+      ],
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400",
+      "description": "4 premium wines with tasting notes and accessories"
+    },
+    {
+      "id": 22,
+      "name": "Weighted Blanket",
+      "category": "home",
+      "price": 129.99,
+      "keywords": [
+        "relaxation",
+        "sleep",
+        "comfort",
+        "stress relief",
+        "cozy",
+        "wellness"
+      ],
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400",
+      "description": "15lb weighted blanket for anxiety relief and better sleep"
+    },
+    {
+      "id": 23,
+      "name": "Cocktail Making Set",
+      "category": "kitchen",
+      "price": 89.99,
+      "keywords": [
+        "entertainment",
+        "party",
+        "social",
+        "creative",
+        "luxury",
+        "foodie"
+      ],
+      "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400",
+      "description": "Professional cocktail set with recipe book and tools"
+    },
+    {
+      "id": 24,
+      "name": "Karaoke Microphone",
+      "category": "electronics",
+      "price": 69.99,
+      "keywords": [
+        "music",
+        "fun",
+        "party",
+        "entertainment",
+        "social",
+        "singing"
+      ],
+      "image": "https://images.unsplash.com/photo-1564951434112-528d0e7f0d7b?w=400",
+      "description": "Wireless karaoke microphone with echo effects"
+    },
+    {
+      "id": 25,
+      "name": "Succulent Garden Kit",
+      "category": "outdoor",
+      "price": 49.99,
+      "keywords": [
+        "gardening",
+        "nature",
+        "home",
+        "decor",
+        "relaxing",
+        "easy care"
+      ],
+      "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400",
+      "description": "5 succulent plants with decorative pots and soil"
+    },
+    {
+      "id": 26,
+      "name": "Memory Foam Slippers",
+      "category": "fashion",
+      "price": 39.99,
+      "keywords": [
+        "comfort",
+        "cozy",
+        "home",
+        "practical",
+        "relaxation",
+        "warm"
+      ],
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400",
+      "description": "Premium memory foam slippers with non-slip soles"
+    },
+    {
+      "id": 27,
+      "name": "Star Projector",
+      "category": "home",
+      "price": 59.99,
+      "keywords": [
+        "relaxation",
+        "sleep",
+        "romantic",
+        "decor",
+        "calming",
+        "night"
+      ],
+      "image": "https://images.unsplash.com/photo-1534796636918-6a8c0be14515?w=400",
+      "description": "Galaxy star projector with remote control and timer"
+    },
+    {
+      "id": 28,
+      "name": "Puzzle Box Collection",
+      "category": "games",
+      "price": 79.99,
+      "keywords": [
+        "brain teaser",
+        "fun",
+        "challenging",
+        "thoughtful",
+        "unique",
+        "gaming"
+      ],
+      "image": "https://images.unsplash.com/photo-1600271785177-9854c47b0eab?w=400",
+      "description": "Set of 5 wooden puzzle boxes with increasing difficulty"
+    },
+    {
+      "id": 29,
+      "name": "Personalized Map Art",
+      "category": "home",
+      "price": 89.99,
+      "keywords": [
+        "sentimental",
+        "personalized",
+        "decor",
+        "memory",
+        "thoughtful",
+        "keepsake"
+      ],
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400",
+      "description": "Custom map artwork of a special location"
+    },
+    {
+      "id": 30,
+      "name": "Indoor Herb Garden Light",
+      "category": "kitchen",
+      "price": 119.99,
+      "keywords": [
+        "gardening",
+        "cooking",
+        "kitchen",
+        "fresh",
+        "healthy",
+        "modern"
+      ],
+      "image": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400",
+      "description": "Smart indoor herb garden with LED grow lights"
+    },
+    {
+      "id": 31,
+      "name": "Travel Hammock",
+      "category": "outdoor",
+      "price": 59.99,
+      "keywords": [
+        "outdoor",
+        "relaxation",
+        "travel",
+        "lightweight",
+        "adventure",
+        "comfort"
+      ],
+      "image": "https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=400",
+      "description": "Portable hammock with straps for easy setup anywhere"
+    },
+    {
+      "id": 32,
+      "name": "Smart Water Bottle",
+      "category": "fitness",
+      "price": 49.99,
+      "keywords": [
+        "fitness",
+        "health",
+        "hydration",
+        "tech",
+        "practical",
+        "wellness"
+      ],
+      "image": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400",
+      "description": "Smart bottle that tracks water intake and reminds to drink"
+    },
+    {
+      "id": 33,
+      "name": "Book Subscription Box",
+      "category": "books",
+      "price": 29.99,
+      "keywords": [
+        "reading",
+        "books",
+        "monthly",
+        "surprise",
+        "learning",
+        "entertainment"
+      ],
+      "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400",
+      "description": "Monthly subscription with a new book and bookish items"
+    },
+    {
+      "id": 34,
+      "name": "Aromatherapy Shower Steamers",
+      "category": "wellness",
+      "price": 24.99,
+      "keywords": [
+        "relaxation",
+        "aromatherapy",
+        "spa",
+        "self-care",
+        "stress relief",
+        "luxury"
+      ],
+      "image": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400",
+      "description": "Set of 12 shower steamers with essential oil blends"
+    },
+    {
+      "id": 35,
+      "name": "Mini Desktop Vacuum Cleaner",
+      "category": "electronics",
+      "price": 39.99,
+      "keywords": ["practical", "desk", "clean", "gadget", "office", "useful"],
+      "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400",
+      "description": "Cordless mini vacuum for keyboards and small spaces"
+    },
+    {
+      "id": 36,
+      "name": "Personalized Song Art",
+      "category": "arts",
+      "price": 69.99,
+      "keywords": [
+        "music",
+        "personalized",
+        "sentimental",
+        "art",
+        "unique",
+        "keepsake"
+      ],
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",
+      "description": "Custom artwork featuring the waveform of a special song"
+    },
+    {
+      "id": 37,
+      "name": "Electric Hot Chocolate Maker",
+      "category": "kitchen",
+      "price": 89.99,
+      "keywords": ["cozy", "warm", "foodie", "comfort", "winter", "sweet"],
+      "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400",
+      "description": "Machine that makes rich, frothy hot chocolate in minutes"
+    },
+    {
+      "id": 38,
+      "name": "LED Light Strip Kit",
+      "category": "home",
+      "price": 34.99,
+      "keywords": ["decor", "tech", "ambiance", "room", "colorful", "modern"],
+      "image": "https://images.unsplash.com/photo-1568781269551-3e3baf5ec909?w=400",
+      "description": "16ft LED strip with remote control and color changing"
+    },
+    {
+      "id": 39,
+      "name": "Bamboo Chess Set",
+      "category": "games",
+      "price": 79.99,
+      "keywords": [
+        "strategy",
+        "classic",
+        "wooden",
+        "sophisticated",
+        "thoughtful",
+        "timeless"
+      ],
+      "image": "https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=400",
+      "description": "Handcrafted bamboo chess set with storage box"
+    },
+    {
+      "id": 40,
+      "name": "Smart Jump Rope",
+      "category": "fitness",
+      "price": 59.99,
+      "keywords": ["fitness", "workout", "tech", "sports", "active", "cardio"],
+      "image": "https://images.unsplash.com/photo-1594737626072-90dc274b3e5a?w=400",
+      "description": "Digital jump rope that counts jumps and calories"
+    }
+  ]
+}

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./NavBar.css";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +47,9 @@ const NavBar = () => {
           </a>
         </li>
       </ul>
-      <button className="nav-cta">Se lancer</button>
+      <button className="nav-cta" onClick={() => navigate("/gift-finder")}>
+        Se lancer
+      </button>
     </nav>
   );
 };

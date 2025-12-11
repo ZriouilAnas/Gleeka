@@ -33,7 +33,7 @@ const NavBar = () => {
         </li>
         <li>
           <a href="#project" className="nav-link">
-            à propos
+            À propos
           </a>
         </li>
         <li>
@@ -48,7 +48,7 @@ const NavBar = () => {
         </li>
       </ul>
       <button className="nav-cta" onClick={() => navigate("/gift-finder")}>
-        Se lancer
+        Lancer le test
       </button>
     </nav>
   );

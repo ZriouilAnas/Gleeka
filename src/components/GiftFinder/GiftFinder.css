@@ -1,478 +1,675 @@
+/* Gift Finder Container */
 .gift-finder {
-  width: 100vw;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: 80vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  max-width: 100vw;
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Header */
 .finder-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   animation: fadeIn 0.8s ease;
 }
 
 .finder-header h1 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   color: #2c3e50;
-  margin-bottom: 1rem;
+  margin: 0;
   font-weight: 700;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
 }
 
 /* Progress Container */
 .progress-container {
-  margin-bottom: 3rem;
+  width: 100%;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .progress-bar {
-  height: 8px;
+  width: 60%;
+  height: 6px;
   background: #e0e6ed;
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 1rem;
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
-  border-radius: 4px;
-  transition: width 0.6s ease;
+  background: #6c5ce7;
+  transition: width 0.5s ease;
+  border-radius: 3px;
 }
 
 .progress-text {
   text-align: center;
-  color: #636e72;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  color: #b2bec3;
+  font-weight: 500;
 }
 
 /* Question Card */
 .question-card {
   background: white;
   border-radius: 20px;
-  padding: 3rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  animation: slideUp 0.5s ease;
+  padding: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  width: 100%;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  min-width: 800px;
 }
 
-.question-title {
-  font-size: 1.8rem;
+.step-header {
+  margin-bottom: 2rem;
+}
+
+.step-header h2 {
+  font-size: 1.5rem;
   color: #2d3436;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  font-weight: 600;
-  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
 }
 
-/* Options Grid */
-.options-grid {
+/* Question Section */
+.question-section {
+  margin-bottom: 2rem;
+}
+
+.question-section label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 1rem;
+}
+
+/* Budget Inputs */
+.budget-inputs label {
+  margin-bottom: 0.8rem;
+}
+
+.budget-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
-.option-card {
-  background: #f8f9fa;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  padding: 1.8rem;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-}
-
-.option-card:hover {
-  background: linear-gradient(135deg, #f0f4ff, #e6e9ff);
-  border-color: #6c5ce7;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.15);
-}
-
-.option-card:active {
-  transform: translateY(-2px);
-}
-
-.option-content {
+.budget-field {
   display: flex;
   flex-direction: column;
+}
+
+.budget-field label {
+  font-size: 0.8rem;
+  color: #b2bec3;
+  margin-bottom: 0.4rem;
+}
+
+.budget-field input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #dfe6e9;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #2d3436;
+  font-weight: 500;
+}
+
+.budget-field input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+/* Slider Input */
+.slider-input label {
+  margin-bottom: 0;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.slider-value-display {
+  font-weight: 700;
+  color: #2d3436;
+  font-size: 0.95rem;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #dfe6e9;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(#2d3436, #2d3436);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Thumb Styling */
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f39c12;
+  /* Orange thumb */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 3px solid white;
+}
+
+.slider-container input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f39c12;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Multiple Section (Pill Buttons) */
+.multiple-section label {
+  margin-bottom: 0.8rem;
+}
+
+.options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* Step 3 Grid Layout */
+.options-grid.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.option-text {
-  font-size: 1.2rem;
-  color: #2c3e50;
-  font-weight: 600;
-  line-height: 1.4;
+.options-grid.grid-3 .option-card {
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+  /* Ensure sufficient height for uniformity */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+  /* Screenshot shows slightly less rounded than pills? User said "correspondent à ce que je t'ai mis". Screenshot cards look like rounded rectangles, not full pills. */
+  /* If user wants EXACTLY like screenshot, I should change border-radius for grid-3 */
 }
 
-.option-keywords {
+.option-card {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #dfe6e9;
+  border-radius: 50px;
+  /* Pill shape */
+  background: white;
+  color: #b2bec3;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-card:hover {
+  border-color: #6c5ce7;
+  color: #6c5ce7;
+  transform: translateY(-1px);
+}
+
+.option-card.active {
+  border-color: #6c5ce7;
+  background: rgba(108, 92, 231, 0.05);
+  /* Light purple tint */
+  color: #6c5ce7;
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.15);
+}
+
+/* Single Section */
+.single-section .radio-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 0.5rem;
 }
 
-.mini-tag {
-  background: rgba(108, 92, 231, 0.1);
-  color: #6c5ce7;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
+.radio-label {
+  padding: 0.5rem 1rem 0.5rem 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: #2d3436;
   font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.radio-label:hover {
+  opacity: 0.8;
+  transform: none;
+  /* No movement for standard radios */
+  color: #2d3436;
+}
+
+.radio-label.active {
+  border-color: transparent;
+  background: transparent;
+  color: #2d3436;
+  box-shadow: none;
+  font-weight: 600;
+  /* Subtle bold for active */
+}
+
+/* Custom Radio Input Styling (Optional, to match color) */
+.radio-label input[type="radio"] {
+  accent-color: #0984e3;
+  /* Blue match */
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.radio-group.segmented-control {
+  flex-direction: row;
+  background: #f1f2f6;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 0;
+  display: inline-flex;
+}
+
+.radio-group.segmented-control input[type="radio"] {
+  display: none;
+}
+
+.radio-group.segmented-control .radio-label {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #7f8c8d;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.radio-group.segmented-control .radio-label:hover {
+  color: #2c3e50;
+  transform: none;
+}
+
+.radio-group.segmented-control .radio-label.active {
+  background: white;
+  color: #2c3e50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.radio-group.segmented-control .radio-label input[type="radio"] {
+  display: none;
+}
+
+/* Select Section */
+.select-section label {
+  margin-bottom: 0.8rem;
+}
+
+.select-section select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #dfe6e9;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background-color: white;
+  color: #2d3436;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%232d3436%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.65em auto;
+}
+
+.select-section select:focus {
+  outline: none;
+  border-color: #6c5ce7;
 }
 
 /* Navigation */
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  width: 100%;
   max-width: 800px;
-  margin: 2rem auto 0;
-  padding: 1rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .nav-btn {
-  background: #6c5ce7;
-  color: white;
+  padding: 0.8rem 2rem;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
-.nav-btn:hover {
-  background: #5b4bd8;
+.nav-btn.primary {
+  background: #1e272e;
+  /* Dark black/grey */
+  color: white;
+}
+
+.nav-btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: #000;
 }
 
 .nav-btn.secondary {
-  background: #dfe6e9;
-  color: #636e72;
+  background: transparent;
+  color: #b2bec3;
+  border: none;
 }
 
 .nav-btn.secondary:hover {
-  background: #b2bec3;
-  color: white;
+  color: #2d3436;
 }
 
-.step-indicator {
-  color: #636e72;
-  font-weight: 600;
-  font-size: 0.9rem;
+/* Checkbox Sections */
+.checkbox-label {
+  border: 1px solid #dfe6e9;
+  border-radius: 12px;
 }
 
-/* Results View */
-.results-view {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.checkbox-label:hover {
+  border-color: #6c5ce7;
+  background-color: #f8fbff;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 768px) {
+  .question-card {
+    padding: 1.5rem;
+  }
+
+  .budget-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading, Results and Animations */
+.gift-finder.results-view {
   padding: 1rem;
-  width: 99vw;
-  max-width: 99vw;
-  margin-top: 0;
-  height: 100%;
-}
-
-.results-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: white;
 }
 
 .results-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.results-header .subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
+  font-size: 2rem;
+  color: #2d3436;
 }
 
 .gifts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24vw, 1fr));
-  gap: 3vw;
-  margin-top: 0;
-  margin: 3vw;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .gift-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.gift-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .gift-image {
   height: 200px;
-  overflow: hidden;
+  background: #dfe6e9;
 }
 
 .gift-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.gift-card:hover .gift-image img {
-  transform: scale(1.05);
 }
 
 .gift-info {
   padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.gift-info h3 {
-  font-size: 1.3rem;
-  color: #2c3e50;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-
-.gift-description {
-  color: #7f8c8d;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  flex-grow: 1;
-}
-
-.gift-keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.keyword-tag {
-  background: #e3f2fd;
-  color: #1976d2;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
 }
 
 .gift-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+  margin-top: 1rem;
 }
 
 .gift-price {
-  font-size: 1.4rem;
-  color: #6c5ce7;
   font-weight: 700;
+  color: #6c5ce7;
 }
 
 .select-btn {
-  background: #00b894;
+  background: #1e272e;
   color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.select-btn:hover {
-  background: #00a085;
-  transform: translateY(-2px);
-}
-
-.results-actions {
-  text-align: center;
-}
-
-.restart-btn {
-  background: white;
-  color: #6c5ce7;
-  border: 2px solid #6c5ce7;
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.restart-btn:hover {
-  background: #6c5ce7;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Loading State */
-.loading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  text-align: center;
-}
-
-.loading-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #6c5ce7;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 2rem;
-}
-
-.loading h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.loading p {
-  color: #7f8c8d;
-}
-
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Disabled State for Navigation Buttons */
+.nav-btn.primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  /* Disable hover/active scaling */
+  box-shadow: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .gift-finder {
-    padding: 1.5rem;
-    margin: 0 1rem;
-  }
+/* Eco Section Style (Simple Checkbox) */
+.checkbox-section.eco-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
 
-  .finder-header h1 {
-    font-size: 2.2rem;
-  }
+.checkbox-section.eco-section .checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
 
+.checkbox-section.eco-section .checkbox-label:hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.checkbox-section.eco-section input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #46dd85;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkbox-section.eco-section .checkbox-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.checkbox-section.eco-section .checkbox-text strong {
+  color: #2d3436;
+  font-weight: 600;
+}
+
+.checkbox-section.eco-section .checkbox-text p {
+  color: #95a5a6;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Urgency Section Style (Simple Checkbox - Red) */
+.checkbox-section.urgency-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-section.urgency-section .checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.checkbox-section.urgency-section .checkbox-label:hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.checkbox-section.urgency-section input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #e74c3c;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkbox-section.urgency-section .checkbox-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.checkbox-section.urgency-section .checkbox-text strong {
+  color: #2d3436;
+  font-weight: 600;
+}
+
+.checkbox-section.urgency-section .checkbox-text p {
+  color: #95a5a6;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
   .question-card {
-    padding: 2rem 1.5rem;
+    min-width: auto;
   }
+}
 
-  .question-title {
-    font-size: 1.5rem;
+@media (max-width: 768px) {
+  .question-card {
+    min-width: auto;
+    max-width: 90%;
   }
+}
 
-  .options-grid {
+@media (max-width: 480px) {
+  .question-card {
+    min-width: auto;
+    max-width: 95%;
+  }
+}
+
+/* Responsive Grid for Step 3 */
+@media (max-width: 1024px) {
+  .options-grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .options-grid.grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .options-grid.grid-3 {
     grid-template-columns: 1fr;
   }
-
-  .gifts-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .navigation {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .results-view {
-    padding: 2rem 1.5rem;
-  }
-
-  .results-header h2 {
-    font-size: 2rem;
-  }
-}
-
-/* Accessibility */
-.option-card:focus {
-  outline: 3px solid rgba(108, 92, 231, 0.5);
-  outline-offset: 2px;
-}
-
-.nav-btn:focus,
-.select-btn:focus,
-.restart-btn:focus {
-  outline: 3px solid rgba(108, 92, 231, 0.5);
-  outline-offset: 2px;
-}
-
-/* Selection State */
-.option-card.selected {
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-  border-color: #6c5ce7;
-  color: white;
-}
-
-.option-card.selected .option-text {
-  color: white;
-}
-
-.option-card.selected .mini-tag {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
 }

@@ -8,171 +8,256 @@ const GiftFinder = () => {
   const [suggestedGifts, setSuggestedGifts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const questions = [
+  const steps = [
     {
-      id: "ageGroup",
-      question: "Quel est leur groupe d’âge?",
-      type: "single",
-      options: [
+      id: "step1",
+      title: "👤 Profil Général",
+      questions: [
         {
-          text: "18-25",
-          value: "youngAdult",
-          keywords: ["trendy", "tech", "modern"],
+          id: "budget",
+          question: "Quel est votre budget ? (Min - Max)",
+          type: "budget",
+          minLabel: "Minimum €",
+          maxLabel: "Maximum €",
+          minValue: 5,
+          maxValue: 100,
         },
         {
-          text: "26-40",
-          value: "adult",
-          keywords: ["practical", "quality", "professional"],
+          id: "recipient",
+          question: "Pour qui est-ce ?",
+          type: "multiple",
+          options: [
+            { text: "Ami(e)", value: "friend", keywords: ["friendship", "casual", "fun"] },
+            { text: "Conjoint(e)", value: "partner", keywords: ["romantic", "intimate", "special"] },
+            { text: "Grand-parent", value: "grandparent", keywords: ["sentimental", "classic", "comfort"] },
+            { text: "Parent", value: "parent", keywords: ["practical", "useful", "quality"] },
+            { text: "Enfant", value: "child", keywords: ["fun", "educational", "safe"] },
+            { text: "Collègue", value: "colleague", keywords: ["professional", "useful", "practical"] },
+            { text: "Frère/Soeur", value: "sibling", keywords: ["fun", "personal", "meaningful"] },
+            { text: "Autre", value: "other", keywords: ["thoughtful", "unique", "special"] },
+          ],
         },
         {
-          text: "41-60",
-          value: "middleAged",
-          keywords: ["luxury", "experience", "comfort"],
+          id: "age",
+          question: "Âge : ",
+          type: "slider",
+          min: 5,
+          max: 100,
+          unit: " ans",
         },
         {
-          text: "60+",
-          value: "senior",
-          keywords: ["sentimental", "comfort", "practical"],
+          id: "gender",
+          question: "Genre (Optionnel)",
+          type: "single",
+          options: [
+            { text: "Femme", value: "female", keywords: ["feminine"] },
+            { text: "Homme", value: "male", keywords: ["masculine"] },
+            { text: "Neutre", value: "neutral", keywords: ["unisex"] },
+          ],
+        },
+        {
+          id: "occasion",
+          question: "L'occasion ?",
+          type: "single",
+          isSelect: true,
+          options: [
+            { text: "Sélectionnez une occasion", value: "", keywords: [] },
+            { text: "Anniversaire", value: "birthday", keywords: ["celebration", "personal"] },
+            { text: "Noël", value: "christmas", keywords: ["festive", "family"] },
+            { text: "Saint Valentin", value: "valentines", keywords: ["romantic", "sentimental"] },
+            { text: "Mariage", value: "wedding", keywords: ["celebration", "special"] },
+            { text: "Naissance", value: "birth", keywords: ["new", "baby"] },
+            { text: "Retraite", value: "retirement", keywords: ["milestone", "relaxation"] },
+          ],
         },
       ],
     },
     {
-      id: "interests",
-      question: "Quels sont leurs principaux intérêts ?",
+      id: "step2",
+      title: "❤️ Style & Personnalité",
+      questions: [
+        {
+          id: "traits",
+          question: "Traits de caractère principaux",
+          type: "multiple",
+          options: [
+            { text: "Calme", value: "calm", keywords: ["peaceful", "relaxation"] },
+            { text: "Créatif", value: "creative", keywords: ["creative", "artistic"] },
+            { text: "Aventurier", value: "adventurous", keywords: ["adventure", "outdoor"] },
+            { text: "Drôle", value: "funny", keywords: ["humor", "fun"] },
+            { text: "Ambitieux", value: "ambitious", keywords: ["success", "professional"] },
+            { text: "Geek", value: "geek", keywords: ["tech", "gaming"] },
+            { text: "Rêveur", value: "dreamer", keywords: ["imaginative", "artistic"] },
+            { text: "Sportif", value: "sporty", keywords: ["fitness", "active"] },
+            { text: "Gourmand", value: "foodie", keywords: ["cooking", "food"] },
+            { text: "Curieux", value: "curious", keywords: ["learning", "exploration"] },
+          ],
+        },
+        {
+          id: "preference",
+          question: "Préférence Matériel vs Expérience ?",
+          type: "single",
+          options: [
+            { text: "Objet", value: "object", keywords: ["tangible", "keepsake"] },
+            { text: "Expérience", value: "experience", keywords: ["memory", "adventure"] },
+            { text: "Les deux", value: "both", keywords: ["balanced", "thoughtful"] },
+          ],
+        },
+        {
+          id: "lifestyle",
+          question: "Style de vie ?",
+          type: "single",
+          options: [
+            { text: "Casanier", value: "homebody", keywords: ["comfort", "home"] },
+            { text: "Actif / Dehors", value: "active", keywords: ["outdoor", "adventure"] },
+            { text: "Équilibré", value: "balanced", keywords: ["balanced", "varied"] },
+          ],
+        },
+        {
+          id: "eco",
+          question: "Sensibilité Écolo / Made in France ?",
+          type: "checkbox",
+          text: "Prioriser l'éthique et le durable.",
+          keywords: ["eco", "sustainable", "ethical"],
+        },
+      ],
+    },
+    {
+      id: "step3",
+      title: "🧠 Centres d'intérêt",
       type: "multiple",
+      question: "Sélectionnez tout ce qui lui correspond.",
       options: [
+        { text: "Cuisine & Gastronomie", value: "cooking", keywords: ["cooking", "food", "culinary"] },
+        { text: "Bien-être & Relaxation", value: "wellness", keywords: ["wellness", "relaxation", "health"] },
+        { text: "Sport & Plein air", value: "sports", keywords: ["sports", "outdoor", "fitness"] },
+        { text: "Lecture & Culture", value: "reading", keywords: ["books", "culture", "intellectual"] },
+        { text: "Tech & Gadgets", value: "tech", keywords: ["tech", "gadgets", "electronics"] },
+        { text: "Maison & Déco", value: "home", keywords: ["home", "decor", "interior"] },
+        { text: "Mode & Accessoires", value: "fashion", keywords: ["fashion", "style", "accessories"] },
+        { text: "Jeux & Divertissement", value: "gaming", keywords: ["gaming", "fun", "entertainment"] },
+        { text: "Musique", value: "music", keywords: ["music", "audio", "entertainment"] },
+        { text: "Art & Artisanat", value: "arts", keywords: ["creative", "arts", "crafts"] },
+        { text: "Animaux", value: "animals", keywords: ["pets", "animals", "nature"] },
+        { text: "Voyages", value: "travel", keywords: ["travel", "adventure", "exploration"] },
+      ],
+    },
+    {
+      id: "step4",
+      title: "🔍 Derniers détails",
+      questions: [
         {
-          text: "Music & Audio",
-          value: "music",
-          keywords: ["music", "audio", "entertainment"],
-        },
-        {
-          text: "Lecture et écriture",
-          value: "reading",
-          keywords: ["books", "writing", "learning"],
-        },
-        {
-          text: "Fitness & Wellness",
-          value: "fitness",
-          keywords: ["fitness", "health", "wellness"],
-        },
-        {
-          text: "Cuisine & Nourriture",
-          value: "cooking",
-          keywords: ["cooking", "foodie", "kitchen"],
-        },
-        {
-          text: "technologique",
-          value: "tech",
-          keywords: ["tech", "gadgets", "electronics"],
-        },
-        {
-          text: "Arts & Crafts",
-          value: "creative",
-          keywords: ["creative", "arts", "crafts"],
+          id: "constraints",
+          question: "Avez-vous des contraintes particulières ?",
+          type: "multiple-checkbox",
+          options: [
+            { text: "Éviter les cadeaux encombrants", value: "avoid_bulky", keywords: ["compact", "small"] },
+            { text: "Possède déjà beaucoup de choses", value: "already_has", keywords: ["minimalist", "unique"] },
+          ],
         },
       ],
     },
     {
-      id: "personality",
-      question: "Which best describes their personality?",
-      type: "single",
-      options: [
+      id: "step5",
+      title: "⏰ Contexte Pratique",
+      questions: [
         {
-          text: "Pratique & Organisé",
-          value: "practical",
-          keywords: ["practical", "organized", "useful"],
-        },
-        {
-          text: "Créatif & Artistique",
-          value: "creative",
-          keywords: ["creative", "artistic", "unique"],
-        },
-        {
-          text: "Aventureux & Actif",
-          value: "adventurous",
-          keywords: ["adventure", "outdoor", "active"],
-        },
-        {
-          text: "Relaxed & Homebody",
-          value: "relaxed",
-          keywords: ["comfort", "relaxation", "home"],
+          id: "urgency",
+          question: "C'est une urgence ? (Livraison < 48h)",
+          type: "checkbox",
+          text: "Si coché, nous ne proposerons que des produits livrables très rapidement ou des e-cartes/bons.",
+          keywords: ["fast", "urgent"],
         },
       ],
-    },
-    {
-      id: "occasion",
-      question: "C'est pour quelle occasion ?",
-      type: "single",
-      options: [
-        {
-          text: "Birthday",
-          value: "birthday",
-          keywords: ["celebration", "personal", "special"],
-        },
-        {
-          text: "Holiday",
-          value: "holiday",
-          keywords: ["festive", "traditional", "family"],
-        },
-        {
-          text: "Anniversary",
-          value: "anniversary",
-          keywords: ["romantic", "sentimental", "keepsake"],
-        },
-        {
-          text: "juste parce que",
-          value: "casual",
-          keywords: ["thoughtful", "practical", "everyday"],
-        },
-      ],
-    },
-    {
-      id: "budget",
-      question: "Quelle est votre budget ?",
-      type: "single",
-      options: [
-        {
-          text: "moins de 50€",
-          value: "budget",
-          keywords: ["affordable", "creative", "practical"],
-        },
-        {
-          text: "€50 - €150",
-          value: "midRange",
-          keywords: ["quality", "premium", "worthwhile"],
-        },
-        {
-          text: "€150+",
-          value: "luxury",
-          keywords: ["luxury", "premium", "highQuality"],
-        },
-      ],
+      finalMessage: "Tout est prêt ? Gleeka va générer des idées magiques pour vous.",
+      buttonText: "✨ Révéler les cadeaux",
     },
   ];
 
-  const handleAnswer = (questionId, value, keywords) => {
+  const handleAnswer = (questionId, value, keywords = []) => {
+    const newAnswers = {
+      ...answers,
+      [questionId]: { value, keywords: Array.isArray(keywords) ? keywords : [keywords] },
+    };
+    setAnswers(newAnswers);
+  };
+
+  const handleMultipleAnswer = (questionId, value, keywords) => {
+    const current = answers[questionId]?.value || [];
+    const isSelected = current.includes(value);
+
+    const newValues = isSelected
+      ? current.filter((v) => v !== value)
+      : [...current, value];
+
+    const allKeywords = newValues.flatMap((v) => {
+      const option = steps
+        .flatMap((s) => s.questions || [s])
+        .flatMap((q) => q.options || [])
+        .find((o) => o.value === v);
+      return option ? option.keywords : [];
+    });
+
     setAnswers((prev) => ({
       ...prev,
-      [questionId]: { value, keywords },
+      [questionId]: { value: newValues, keywords: allKeywords },
     }));
+  };
 
-    if (currentStep < questions.length - 1) {
+  const handleBudgetChange = (min, max) => {
+    setAnswers((prev) => ({
+      ...prev,
+      budget: { value: { min, max }, keywords: ["budget"] },
+    }));
+  };
+
+  const handleSliderChange = (value) => {
+    setAnswers((prev) => ({
+      ...prev,
+      age: { value, keywords: ["age"] },
+    }));
+  };
+
+  const handleCheckboxChange = (questionId, keywords) => {
+    const isChecked = answers[questionId]?.value || false;
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: { value: !isChecked, keywords: !isChecked ? keywords : [] },
+    }));
+  };
+
+  // Validation for Step 1
+  const isStep1Valid = () => {
+    const recipient = answers.recipient?.value;
+    const hasRecipient = Array.isArray(recipient) ? recipient.length > 0 : !!recipient;
+
+    const occasion = answers.occasion?.value;
+    const hasOccasion = occasion && occasion !== "";
+
+    return hasRecipient && hasOccasion;
+  };
+
+  const goToNextStep = () => {
+    if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
       generateGiftSuggestions();
     }
   };
 
+  const goToPreviousStep = () => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
   const generateGiftSuggestions = () => {
     setLoading(true);
 
-    // Collect all keywords from answers
-    const allKeywords = Object.values(answers).flatMap(
-      (answer) => answer.keywords
-    );
+    const allKeywords = Object.values(answers)
+      .flatMap((answer) => answer.keywords || [])
+      .filter(Boolean);
 
-    // Find gifts that match keywords
     const matchedGifts = giftsData.products
       .filter((product) => {
         const matchScore = product.keywords.filter((keyword) =>
@@ -189,7 +274,7 @@ const GiftFinder = () => {
         ).length;
         return scoreB - scoreA;
       })
-      .slice(0, 6); // Top 6 matches
+      .slice(0, 6);
 
     setTimeout(() => {
       setSuggestedGifts(matchedGifts);
@@ -207,7 +292,7 @@ const GiftFinder = () => {
     return (
       <div className="gift-finder results-view">
         <div className="results-header">
-          <h2>🎁 Gift Suggestions Just For You 🎁</h2>
+          <h2>🎁 Suggestions de cadeaux 🎁</h2>
           <p className="subtitle">
             En fonction de vos préférences, nous avons trouvé ces cadeaux :
           </p>
@@ -240,7 +325,7 @@ const GiftFinder = () => {
                       )
                     }
                   >
-                    Sélectionner un cadeau
+                    Découvrir
                   </button>
                 </div>
               </div>
@@ -250,7 +335,7 @@ const GiftFinder = () => {
 
         <div className="results-actions">
           <button onClick={restartQuiz} className="restart-btn">
-            Refaire le quiz
+            ↻ Refaire le quiz
           </button>
         </div>
       </div>
@@ -267,72 +352,239 @@ const GiftFinder = () => {
     );
   }
 
-  const currentQuestion = questions[currentStep];
+  const currentStepData = steps[currentStep];
+  const isLastStep = currentStep === steps.length - 1;
+  const isStep3 = currentStepData.id === "step3";
+  const isValid = currentStep === 0 ? isStep1Valid() : true;
 
   return (
     <div className="gift-finder">
-      <div className="finder-header">
-        <h1>🎁 Trouver le cadeau parfait 🎁</h1>
-        <p className="subtitle">
-          Répondez à quelques questions pour obtenir des suggestions de cadeaux
-          personnalisés
-        </p>
-      </div>
 
       <div className="progress-container">
         <div className="progress-bar">
           <div
             className="progress-fill"
             style={{
-              width: `${((currentStep + 1) / questions.length) * 100}%`,
+              width: `${((currentStep + 1) / steps.length) * 100}%`,
             }}
           ></div>
         </div>
         <div className="progress-text">
-          Step {currentStep + 1} of {questions.length}
+          Etape {currentStep + 1} sur {steps.length}
         </div>
       </div>
 
       <div className="question-card">
-        <h2 className="question-title">{currentQuestion.question}</h2>
-        <div className="options-grid">
-          {currentQuestion.options.map((option, index) => (
-            <button
-              key={option.value}
-              className="option-card"
-              onClick={() =>
-                handleAnswer(currentQuestion.id, option.value, option.keywords)
-              }
-            >
-              <div className="option-content">
-                <span className="option-text">{option.text}</span>
-                {option.keywords && (
-                  <div className="option-keywords">
-                    {option.keywords.map((keyword) => (
-                      <span key={keyword} className="mini-tag">
-                        {keyword}
+        <div className="step-header">
+          <h2>{currentStepData.title}</h2>
+        </div>
+
+        {isStep3 ? (
+          <>
+            <p className="step-description">{currentStepData.question}</p>
+            <div className="options-grid grid-3">
+              {currentStepData.options.map((option) => (
+                <button
+                  key={option.value}
+                  className={`option-card ${answers[currentStepData.id]?.value?.includes(option.value)
+                    ? "active"
+                    : ""
+                    }`}
+                  onClick={() =>
+                    handleMultipleAnswer(
+                      currentStepData.id,
+                      option.value,
+                      option.keywords
+                    )
+                  }
+                >
+                  {option.text}
+                </button>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            {currentStepData.questions.map((question, idx) => (
+              <div key={question.id} className="question-section">
+                {question.type === "budget" ? (
+                  <div className="budget-inputs">
+                    <label>{question.question}</label>
+                    <div className="budget-row">
+                      <div className="budget-field">
+                        <label>{question.minLabel}</label>
+                        <input
+                          type="number"
+                          defaultValue={5}
+                          onChange={(e) => {
+                            const min = parseInt(e.target.value);
+                            const max = answers.budget?.value?.max || 100;
+                            handleBudgetChange(min, max);
+                          }}
+                        />
+                      </div>
+                      <div className="budget-field">
+                        <label>{question.maxLabel}</label>
+                        <input
+                          type="number"
+                          defaultValue={100}
+                          onChange={(e) => {
+                            const max = parseInt(e.target.value);
+                            const min = answers.budget?.value?.min || 5;
+                            handleBudgetChange(min, max);
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ) : question.type === "slider" ? (
+                  <div className="slider-input">
+                    <div className="label-row">
+                      <label>{question.question}</label>
+                      <span className="slider-value-display">
+                        {answers.age?.value || 30}{question.unit}
                       </span>
+                    </div>
+                    <div className="slider-container">
+                      <input
+                        type="range"
+                        min={question.min}
+                        max={question.max}
+                        defaultValue={30}
+                        onChange={(e) => handleSliderChange(parseInt(e.target.value))}
+                        style={{
+                          backgroundSize: `${((answers.age?.value || 30) - question.min) * 100 / (question.max - question.min)
+                            }% 100%`
+                        }}
+                      />
+                    </div>
+                  </div>
+                ) : question.type === "multiple" ? (
+                  <div className="multiple-section">
+                    <label>{question.question}</label>
+                    <div className="options-grid">
+                      {question.options.map((option) => (
+                        <button
+                          key={option.value}
+                          className={`option-card ${question.id === 'recipient'
+                            ? (answers[question.id]?.value === option.value ? "active" : "")
+                            : (answers[question.id]?.value?.includes(option.value) ? "active" : "")
+                            }`}
+                          onClick={() => {
+                            if (question.id === 'recipient') {
+                              handleAnswer(question.id, option.value, option.keywords);
+                            } else {
+                              handleMultipleAnswer(
+                                question.id,
+                                option.value,
+                                option.keywords
+                              );
+                            }
+                          }}
+                        >
+                          {option.text}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : question.type === "single" && question.isSelect ? (
+                  <div className="select-section">
+                    <label>{question.question}</label>
+                    <select
+                      onChange={(e) =>
+                        handleAnswer(question.id, e.target.value, [])
+                      }
+                    >
+                      {question.options.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.text}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                ) : question.type === "single" ? (
+                  <div className="single-section">
+                    <label>{question.question}</label>
+                    <div className={`radio-group ${question.id === 'gender' ? 'segmented-control' : ''}`}>
+                      {question.options.map((option) => (
+                        <label
+                          key={option.value}
+                          className={`radio-label ${answers[question.id]?.value === option.value ? 'active' : ''}`}
+                        >
+                          <input
+                            type="radio"
+                            name={question.id}
+                            value={option.value}
+                            checked={answers[question.id]?.value === option.value}
+                            onChange={() =>
+                              handleAnswer(question.id, option.value, option.keywords)
+                            }
+                          />
+                          <span>{option.text}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                ) : question.type === "checkbox" ? (
+                  <div className={`checkbox-section ${question.id === 'eco' ? 'eco-section' : question.id === 'urgency' ? 'urgency-section' : ''}`}>
+                    <label className="checkbox-label">
+                      <input
+                        type="checkbox"
+                        onChange={() =>
+                          handleCheckboxChange(question.id, question.keywords)
+                        }
+                      />
+                      <span className="checkbox-text">
+                        <strong>{question.question}</strong>
+                        <p>{question.text}</p>
+                      </span>
+                    </label>
+                  </div>
+                ) : question.type === "multiple-checkbox" ? (
+                  <div className="multiple-checkbox-section">
+                    <label>{question.question}</label>
+                    {question.options.map((option) => (
+                      <label key={option.value} className="checkbox-label">
+                        <input
+                          type="checkbox"
+                          onChange={() =>
+                            handleMultipleAnswer(
+                              question.id,
+                              option.value,
+                              option.keywords
+                            )
+                          }
+                        />
+                        <span>{option.text}</span>
+                      </label>
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
-            </button>
-          ))}
-        </div>
+            ))}
+
+            {isLastStep && currentStepData.finalMessage && (
+              <div className="final-message">
+                <p>{currentStepData.finalMessage}</p>
+              </div>
+            )}
+          </>
+        )}
       </div>
 
       <div className="navigation">
         {currentStep > 0 && (
-          <button
-            className="nav-btn secondary"
-            onClick={() => setCurrentStep(currentStep - 1)}
-          >
-            ← Previous
+          <button className="nav-btn secondary" onClick={goToPreviousStep}>
+            ← Retour
           </button>
         )}
-        <div className="step-indicator">
-          Question {currentStep + 1} of {questions.length}
-        </div>
+        <button
+          className="nav-btn primary"
+          onClick={goToNextStep}
+          disabled={!isValid}
+        >
+          {isLastStep ? steps[currentStep].buttonText : "Suivant →"}
+        </button>
       </div>
     </div>
   );

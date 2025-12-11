@@ -26,7 +26,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gift-finder" element={<Gifter />} />
       </Routes>
     </BrowserRouter>
   );

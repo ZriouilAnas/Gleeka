@@ -8,7 +8,6 @@ const HeroSection = () => {
   return (
     <section className="hero-container" id="hero">
       <div className="hero-background">
-        <div className="hero-image"></div>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -62,7 +61,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="hero-title"
         >
-          Send a{" "}
+          Un geste
           <span
             className="gift-decoration"
             style={{
@@ -71,11 +70,11 @@ const HeroSection = () => {
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
             }}
-          ></span>{" "}
-          Gift of
+          ></span>
+          simple
           <br />
-          <span className="highlight">Appreciation</span> <br />
-          to Everyone
+          un cadeau <br />
+          qui touche.
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }}

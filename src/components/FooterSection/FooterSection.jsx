@@ -42,7 +42,7 @@ const FooterSection = () => {
             transition={{ duration: 0.6 }}
             className="contact-title"
           >
-            Get in Touch
+            Contactez-nous
           </motion.h3>
           <motion.form
             initial={{ opacity: 0, y: 20 }}
@@ -65,16 +65,16 @@ const FooterSection = () => {
               className="submit-btn"
               onClick={(e) => e.preventDefault()}
             >
-              Send Message
+              Envoyer un message
             </button>
           </motion.form>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 GiftFlow. All rights reserved.</p>
+          <p>&copy; 2025 Gleeka. Tous droits réservés.</p>
           <div className="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Conditions d’utilisation</a>
             <a href="#">GDPR</a>
             <a href="#">Contact</a>
           </div>

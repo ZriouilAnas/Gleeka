@@ -14,7 +14,11 @@ const ProjectDescription = () => {
           className="section-title"
         >
           Pourquoi{" "}
-          <img src="/images/prop1.png" alt="Logo" className="logo_Text" />
+          <img
+            src="/images/Logo_Gleeka V2.png"
+            alt="Logo"
+            className="logo_Text"
+          />
         </motion.h2>
       </div>
 
@@ -33,7 +37,7 @@ const ProjectDescription = () => {
           transition={{ duration: 0.8 }}
           className="card"
         >
-          <h3 className="card-title">The Problem</h3>
+          <h3 className="card-title">Le problème</h3>
           <p className="card-text">
             Dans un monde déconnecté, trouver des moyens significatifs de
             montrer l’appréciation peut être difficile. Les gens se sentent
@@ -60,7 +64,7 @@ const ProjectDescription = () => {
           className="card "
           id="solution"
         >
-          <h3 className="card-title">The Solution</h3>
+          <h3 className="card-title">La solution</h3>
           <p className="card-text">
             <span style={{ color: "blue" }}> Gleeka </span> crée un écosystème
             homogène où la générosité circule librement. Notre plateforme

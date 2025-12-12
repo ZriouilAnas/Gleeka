@@ -51,7 +51,7 @@ const NavBar = () => {
         className="nav-cta"
         onClick={() => (window.location.href = "https://gleeka-v1.vercel.app/")}
       >
-        Gleeki ici
+        Gleek ici
       </button>
     </nav>
   );
